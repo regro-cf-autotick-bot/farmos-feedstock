@@ -1,5 +1,5 @@
 {% set name = "farmOS" %}
-{% set version = "1.0.0b1" %}
+{% set version = "1.0.0b3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7b92f8d1500d8ad399a3537b6d56e4862329bbdb8814c6a7ab4eeb97a6a5f79c
+  sha256: 1a89b579fbc6df10440e40eb9ab79cfbee96503fede3236abd4b0ae3796a07f3
 
 build:
   noarch: python
