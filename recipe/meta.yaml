@@ -1,5 +1,5 @@
 {% set name = "farmOS" %}
-{% set version = "1.0.0b3" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1a89b579fbc6df10440e40eb9ab79cfbee96503fede3236abd4b0ae3796a07f3
+  sha256: edc0098064b1f504a8ed3ef30bee512c3971f5aa3964f60c74ea453a57ea9186
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -36,7 +36,7 @@ about:
   home: https://github.com/farmOS/farmOS.py
   license: GPL-3.0-only
   license_file: LICENSE
-  summary: 'A Python library for interacting with farmOS over API.'
+  summary: A Python library for interacting with farmOS over API.
 
 extra:
   recipe-maintainers:
