@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 46b1d4a7eb9130df1e752fc91794f7a682561158e0a4f02bba8b059d0fae3556
 
 build:
   noarch: python
-  number: 1
+  number: 2
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3
+    - python {{ python_min }}
     - pytest-runner
     - pip
   run:
-    - python >=3
+    - python >={{ python_min }}
     - requests-oauthlib ~=1.3.1
     - pydantic ~=1.7.3
 
@@ -29,6 +29,7 @@ test:
     - farmOS
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
